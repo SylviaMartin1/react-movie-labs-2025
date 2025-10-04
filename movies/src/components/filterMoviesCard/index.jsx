@@ -38,9 +38,9 @@ export default function FilterMoviesCard(props) {
       // eslint-disable-next-line
   }, []);
 
-  const handleChange = (e, type, value) => {
+ const handleChange = (e, type, value) => {
     e.preventDefault()
-    // Completed later
+    props.onUserInput(type, value)   // NEW
   };
   const handleTextChange = e => {
     handleChange(e, "name", e.target.value)
@@ -69,17 +69,17 @@ export default function FilterMoviesCard(props) {
               variant="filled"
               value={props.titleFilter}
               onChange={handleTextChange}
-           />
-
+    />
         <FormControl sx={{...formControl}}>
           <InputLabel id="genre-label">Genre</InputLabel>
-          <Select
-            labelId="genre-label"
-            id="genre-select"
-            defaultValue=""
-            value={props.genreFilter}
-            onChange={handleGenreChange}
-          >
+            <Select
+              labelId="genre-label"
+              id="genre-select"
+              defaultValue=""
+              value={props.genreFilter}
+              onChange={handleGenreChange}
+            >
+
             {genres.map((genre) => {
               return (
                 <MenuItem key={genre.id} value={genre.id}>
@@ -105,5 +105,3 @@ export default function FilterMoviesCard(props) {
     </Card>
   );
 }
-
-
