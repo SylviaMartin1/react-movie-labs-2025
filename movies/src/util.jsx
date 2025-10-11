@@ -1,3 +1,4 @@
+// Helper Functions
 import truncate from "lodash/truncate";
 
 export function excerpt(string) {
