@@ -7,7 +7,6 @@ import Spinner from '../components/spinner'
 import RemoveFromFavorites from "../components/cardIcons/removeFromFavorites";
 import WriteReview from "../components/cardIcons/writeReview";
 
-
 const FavoriteMoviesPage = () => {
   const {favorites: movieIds } = useContext(MoviesContext);
 
