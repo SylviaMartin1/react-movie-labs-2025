@@ -1,5 +1,6 @@
 import React from "react";
 import { getMovies } from "../api/tmdb-api";
+import { getTrendingMoviesThisWeek } from "../api/tmdb-api";
 import PageTemplate from '../components/templateMovieListPage';
 import { useQuery } from '@tanstack/react-query';
 import Spinner from '../components/spinner';
@@ -12,6 +13,7 @@ const HomePage = (props) => {
     queryKey: ['discover'],
     queryFn: getMovies,
   })
+
   
   if (isPending) {
     return <Spinner />

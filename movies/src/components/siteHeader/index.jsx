@@ -5,6 +5,11 @@ import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import Button from "@mui/material/Button";
 import MenuIcon from "@mui/icons-material/Menu";
+import HomeIcon from '@mui/icons-material/Home';
+import MovieIcon from '@mui/icons-material/Movie';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import WatchLaterIcon from '@mui/icons-material/WatchLater';
+import SearchIcon from '@mui/icons-material/Search';
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import { useNavigate } from "react-router";
@@ -24,11 +29,11 @@ const SiteHeader = () => {
   const navigate = useNavigate();
 
   const menuOptions = [
-    { label: "Home", path: "/" },
-    { label: "Favorites", path: "/movies/favorites" },
-    { label: "Upcoming", path: "/movies/upcoming" },
-    { label: "Must Watch", path: "/movies/mustWatch" },
-    { label: "Option 4", path: "/" },
+    { label: <HomeIcon />, path: "/" },
+    { label: <MovieIcon />, path: "/movies/upcoming" },
+    { label: <FavoriteIcon />, path: "/movies/favorites" },
+    { label: <WatchLaterIcon />, path: "/movies/mustWatch" },
+    { label: <SearchIcon />, path: "/" },
   ];
 
   const handleMenuSelect = (pageURL) => {
@@ -45,10 +50,9 @@ const SiteHeader = () => {
       <AppBar position="fixed" color="secondary">
         <Toolbar>
           <Typography variant="h4" sx={{ flexGrow: 1 }}>
-            TMDB Client
+            TMDB 
           </Typography>
           <Typography variant="h6" sx={{ flexGrow: 1 }}>
-            All you ever wanted to know about Movies!
           </Typography>
             {isMobile ? (
               <>
