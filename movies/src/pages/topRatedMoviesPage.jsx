@@ -30,7 +30,7 @@ const TopRatedMoviesPage = (props) => {
 
      return (
       <PageTemplate
-        title="Top Rated Movies"
+        title="⭐Top Rated Movies"
         movies={movies}
         action={(movie) => {
           return (

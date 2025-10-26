@@ -30,7 +30,7 @@ const TrendingMoviesPage = (props) => {
 
      return (
       <PageTemplate
-        title="Movies Trending This Week"
+        title="🔥Trending Now "
         movies={movies}
         action={(movie) => {
           return (

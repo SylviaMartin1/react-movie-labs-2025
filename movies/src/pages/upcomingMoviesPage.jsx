@@ -24,7 +24,7 @@ const UpcomingMoviesPage = () => {
 
       return (
       <PageTemplate
-        title="Upcoming Movies"
+        title="📅Upcoming Releases"
         movies={movies}
         action={(movie) => {
          return (

@@ -32,7 +32,7 @@ const HomePage = (props) => {
 
      return (
       <PageTemplate
-        title="Discover Movies"
+        title="🎞️Discover Movies"
         movies={movies}
         action={(movie) => {
           return (

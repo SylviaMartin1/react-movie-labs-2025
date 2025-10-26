@@ -31,7 +31,7 @@ const MoviesPlayingInTheatresPage = (props) => {
 
      return (
       <PageTemplate
-        title="In Theatres Now"
+        title="📽️Now Playing In Theatres"
         movies={movies}
         action={(movie) => {
          return (

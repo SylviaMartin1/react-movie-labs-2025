@@ -33,7 +33,7 @@ const MustWatchPage = () => {
 
      return (
     <PageTemplate
-      title="Must Watch Movies"
+      title="📌Your Watchlist"
       movies={movies}
       action={(movie) => {
         return (
