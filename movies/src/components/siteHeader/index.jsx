@@ -10,12 +10,17 @@ import MovieIcon from '@mui/icons-material/Movie';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import WatchLaterIcon from '@mui/icons-material/WatchLater';
 import SearchIcon from '@mui/icons-material/Search';
+import WhatshotIcon from '@mui/icons-material/Whatshot';
+import MilitaryTechIcon from '@mui/icons-material/MilitaryTech';
+import TheatersIcon from '@mui/icons-material/Theaters';
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import { useNavigate } from "react-router";
 import { styled } from '@mui/material/styles';
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import Tooltip from '@mui/material/Tooltip';
+
 
 const Offset = styled('div')(({ theme }) => theme.mixins.toolbar);
 
@@ -29,11 +34,14 @@ const SiteHeader = () => {
   const navigate = useNavigate();
 
   const menuOptions = [
-    { label: <HomeIcon />, path: "/" },
-    { label: <MovieIcon />, path: "/movies/upcoming" },
-    { label: <FavoriteIcon />, path: "/movies/favorites" },
-    { label: <WatchLaterIcon />, path: "/movies/mustWatch" },
-    { label: <SearchIcon />, path: "/" },
+    { label: <HomeIcon />, path: "/" , title: "Home"}, //Home page
+    { label: <WhatshotIcon />, path: "/movies/trending", title: "Trending Movies" }, //Trending Movies page
+    { label: <MilitaryTechIcon />, path: "/movies/topRated", title: "Top Rated Movies" }, //Top Rated Movies page
+    { label: <TheatersIcon />, path: "/movies/nowPlayingInTheatres", title: "In Theatres" }, //In Theatre Movies page
+    { label: <MovieIcon />, path: "/movies/upcoming", title: "Upcoming Movies" }, //Upcoming Movies page
+    { label: <FavoriteIcon />, path: "/movies/favorites", title: "Favourites" }, //Favourite page
+    { label: <WatchLaterIcon />, path: "/movies/mustWatch", title: "Watch Later" }, //Watchlist page
+    { label: <SearchIcon />, path: "/", title: "Search" }, //Search page
   ];
 
   const handleMenuSelect = (pageURL) => {
@@ -81,11 +89,12 @@ const SiteHeader = () => {
                   onClose={() => setAnchorEl(null)}
                 >
                   {menuOptions.map((opt) => (
+                    
                     <MenuItem
                       key={opt.label}
                       onClick={() => handleMenuSelect(opt.path)}
                     >
-                      {opt.label}
+                      {opt.title}
                     </MenuItem>
                   ))}
                 </Menu>
@@ -93,6 +102,7 @@ const SiteHeader = () => {
             ) : (
               <>
                 {menuOptions.map((opt) => (
+                  <Tooltip key={opt.path} title={opt.title} arrow>
                   <Button
                     key={opt.label}
                     color="inherit"
@@ -100,6 +110,7 @@ const SiteHeader = () => {
                   >
                     {opt.label}
                   </Button>
+                  </Tooltip>
                 ))}
               </>
             )}

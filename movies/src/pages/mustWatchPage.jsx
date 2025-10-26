@@ -7,6 +7,7 @@ import Spinner from '../components/spinner'
 
 const MustWatchPage = () => {
     const {mustWatch: movieIds } = useContext(MoviesContext);
+    
 
     // Create an array of queries and run in parallel.
       const mustWatchQueries = useQueries({

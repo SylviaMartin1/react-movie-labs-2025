@@ -13,9 +13,13 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import MoviesContextProvider from "./contexts/moviesContext";
 import AddMovieReviewPage from './pages/addMovieReviewPage'
 import UpcomingMoviesPage from './pages/upcomingMoviesPage';
+import TrendingMoviesPage from './pages/trendingMoviesPage';
+import TopRatedMoviesPage from './pages/topRatedMoviesPage';
+import MoviesPlayingInTheatresPage from './pages/moviesPlayingInTheatresPage';
 import MustWatchPage from './pages/mustWatchPage';
 import theme from './theme'
 import { ThemeProvider } from '@mui/material/styles';
+import './index.css';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -37,6 +41,9 @@ const App = () => {
           <Routes>
             <Route path="/movies/favorites" element={<FavoriteMoviesPage />} />
             <Route path="/movies/upcoming" element={<UpcomingMoviesPage />} />
+            <Route path="/movies/trending" element={<TrendingMoviesPage />} />
+            <Route path="/movies/topRated" element={<TopRatedMoviesPage />} />
+             <Route path="/movies/nowPlayingInTheatres" element={<MoviesPlayingInTheatresPage />} />
             <Route path="/movies/mustWatch" element={<MustWatchPage />} />
             <Route path="/reviews/:id" element={ <MovieReviewPage /> } />
             <Route path="/movies/:id" element={<MoviePage />} />
