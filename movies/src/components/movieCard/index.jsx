@@ -79,7 +79,7 @@ export default function MovieCard({ movie, action }) {
       <CardContent sx={{color: '#ffffff'}}>
         <Grid container>
           <Grid size={{xs: 12}}>
-            <Typography variant="h5" component="p">
+            <Typography variant="h6" component="p">
             {movie.title}{" "}
           </Typography>
           </Grid>
