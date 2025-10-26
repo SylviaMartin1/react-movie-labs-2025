@@ -26,7 +26,7 @@ const [drawerOpen, setDrawerOpen] = useState(false);
 
   return (
     <>
-      <Typography variant="h5" component="h3" >
+      <Typography variant="h5" component="h3" sx={{ mb: 2 }} >
         Overview
       </Typography>
 

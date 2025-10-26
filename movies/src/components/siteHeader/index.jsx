@@ -107,6 +107,11 @@ const SiteHeader = () => {
                     key={opt.label}
                     color="inherit"
                     onClick={() => handleMenuSelect(opt.path)}
+                    sx={{
+                       '&:hover': {
+                          color: 'yellow'
+                       }
+                    }}
                   >
                     {opt.label}
                   </Button>

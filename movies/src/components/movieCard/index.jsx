@@ -17,6 +17,8 @@ import Avatar from '@mui/material/Avatar';
 import React, { useContext  } from "react";
 import { MoviesContext } from "../../contexts/moviesContext";
 import PlaylistAddIcon from "@mui/icons-material/PlaylistAdd";
+import Tooltip from '@mui/material/Tooltip';
+
 
 export default function MovieCard({ movie, action }) { 
    const { favorites, addToFavorites, mustWatch, addToMustWatch } = useContext(MoviesContext);
@@ -79,7 +81,7 @@ export default function MovieCard({ movie, action }) {
       <CardContent sx={{color: '#ffffff'}}>
         <Grid container>
           <Grid size={{xs: 12}}>
-            <Typography variant="h6" component="p">
+            <Typography variant="h5" component="p">
             {movie.title}{" "}
           </Typography>
           </Grid>
@@ -90,10 +92,8 @@ export default function MovieCard({ movie, action }) {
             </Typography>
           </Grid>
 
-
-           {/* Star, Heart, Add, View */}
           <Grid size={{xs: 6}}>
-            <Typography variant="h6" component="p">
+            <Typography variant="h6" component="p" sx={{color: 'yellow'}}>
               <StarRateIcon fontSize="small" />
               {"  "} {Math.round(movie.vote_average *10) +"%"}{" "}
             </Typography>
@@ -106,9 +106,11 @@ export default function MovieCard({ movie, action }) {
             {/* <Button variant="outlined" size="medium" color="primary">
               More Info ...
             </Button> */}
-            <IconButton aria-label="view movie" color="primary">
+            <Tooltip title="View movie" arrow>
+            <IconButton aria-label="view movie" color="primary" sx={{ '&:hover': { color: 'pink'} }}>
             <VisibilityIcon />
-            </IconButton>  
+            </IconButton> 
+            </Tooltip> 
           </Link>
       </CardActions> }
     </Card>

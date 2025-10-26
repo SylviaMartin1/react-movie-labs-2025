@@ -1,15 +1,7 @@
-/**
- * @file templateMovieListPage
- * @description component which acts as a template for layout of movie list
- * includes a header, filter card, and movie list
- */
 import React, { useState } from "react";
 import Header from "../headerMovieList";
-// import FilterCard from "../filterMoviesCard";
 import MovieList from "../movieList";
 import Grid from "@mui/material/Grid";
-import Stack from '@mui/material/Stack';
-
 
 function MovieListPageTemplate({ movies, title, action }) {
   const [nameFilter, setNameFilter] = useState("");

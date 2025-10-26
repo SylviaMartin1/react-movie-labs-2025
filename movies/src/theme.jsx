@@ -19,6 +19,10 @@ const theme = createTheme({
       paper: '#1c1c1c', 
     },
   },
-  
+   typography: {
+    h5: {
+      fontWeight: 'bold', 
+    },
+  }
 });
 export default theme;
