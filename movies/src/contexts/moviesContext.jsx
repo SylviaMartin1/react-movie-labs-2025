@@ -14,7 +14,7 @@ const MoviesContextProvider = (props) => {
     } else {
       newFavorites = [...favorites];
     }
-    setFavorites(newFavorites);
+    setFavorites(newFavorites); 
   };
 
   const addToMustWatch = (movie) => {

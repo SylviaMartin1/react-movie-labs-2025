@@ -5,7 +5,7 @@ import { MoviesContext } from "../contexts/moviesContext";
 import { useQueries } from "@tanstack/react-query";
 import { getMovie } from "../api/tmdb-api";
 import Spinner from '../components/spinner'
-import RemoveFromList from "../components/cardIcons/removeFromList";
+import RemoveFromWatchList from "../components/cardIcons/removeFromWatchList";
 import WriteReview from "../components/cardIcons/writeReview";
 
 //2. Main Functionality
@@ -41,7 +41,7 @@ const MustWatchPage = () => {
       action={(movie) => {
         return (
           <>
-           <RemoveFromList movie={movie} />
+           <RemoveFromWatchList movie={movie} />
             <WriteReview movie={movie} />
           </>
         );
