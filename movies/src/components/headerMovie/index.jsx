@@ -4,8 +4,10 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Paper from "@mui/material/Paper";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import HomeIcon from "@mui/icons-material/Home";
+import LinkIcon from '@mui/icons-material/Link';
+import Box from "@mui/material/Box";
 import { useNavigate } from "react-router";
+import Tooltip from '@mui/material/Tooltip';
 
 const MovieHeader = (props) => {
   const movie = props.movie;
@@ -26,13 +28,20 @@ const MovieHeader = (props) => {
         <ArrowBackIcon color="primary" fontSize="large" />
       </IconButton>
 
-      <Typography variant="h4" component="h3" sx={{ color: '#ffffff' }}>
-        {movie.title}
-        <a href={movie.homepage}>
-          <HomeIcon color="primary" />
+
+      <Tooltip title="Watch Movie" arrow>
+      <a href={movie.homepage}>
+          <LinkIcon color="primary" fontSize="large" sx={{'&:hover': {color: 'yellow'}}} />
         </a>
+        </Tooltip>
+
+
+
+      <Typography variant="h4" component="h3"  sx={{ color: '#ffffff', fontWeight:"bold", fontFamily:"Poppins" }}>
+        {movie.title}
         <br />
-        <span sx={{ fontSize: "1.5rem" }}>{`   "${movie.tagline}"`} </span>
+        <Box sx={{ fontSize: "1.2rem", fontStyle: "italic", textAlign: "center" }}>
+          {movie.tagline &&`"${movie.tagline.charAt(0).toUpperCase() + movie.tagline.slice(1).toLowerCase()}"`} </Box>
       </Typography>
 
       <IconButton aria-label="go forward" onClick={() => navigate(+1) } >

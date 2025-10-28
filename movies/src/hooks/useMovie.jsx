@@ -1,24 +1,18 @@
+//1. Import Statements
 import { useQuery } from '@tanstack/react-query';
-//import { useEffect, useState } from "react";
 import {getMovie} from '../api/tmdb-api'
 
+//2. Main Functionality
+/**
+ * @function useMovie()
+ * @description fetches a specific movie by its ID
+ */
 const useMovie = (id) => {
   const { data, error, isPending, isError } = useQuery({
     queryKey: ['movie', { id }],
     queryFn: getMovie,
   });
-  
+
   return { data, error, isPending, isError };
 };
-
-/* const useMovie = id => {
-  const [movie, setMovie] = useState(null);
-  useEffect(() => {
-    getMovie(id).then(movie => {
-      setMovie(movie);
-    });
-  }, [id]);
-  return [movie, setMovie];
-}; */
-
 export default useMovie;

@@ -1,5 +1,11 @@
-//Starts app and connects it to the webpage
+/**
+ * @file main.jsx 
+ * @description The entry point of the app
+ */
 
+//=====================
+// 1. Import Statements
+//=====================
 import React from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Route, Navigate, Routes } from "react-router";
@@ -21,6 +27,17 @@ import theme from './theme'
 import { ThemeProvider } from '@mui/material/styles';
 import './index.css';
 
+//=======================
+// 2. React Query Client
+//=======================
+/**
+ * QueryClient to control caching of queries from TMDB API
+ * default options to set default behaviour of each query
+ * data remains fresh for 6 mins before being considered stale
+ * data is refetched every 6 mins
+ * data won't refresh when I leave and return to tab
+ * 
+ */
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -31,9 +48,20 @@ const queryClient = new QueryClient({
   },
 });
 
+//=======================
+// 3. App Component 
+//=======================
+/**
+ * Main app component that:
+ * - Wraps the app in the custom material theme
+ * - Provides React Query Client for data fetching and caching
+ * - Displays the siteHeader(navigation bar)
+ * - Provides MoviesContext to share movie data across components
+ * - Defines all routes in the app
+ */
 const App = () => {
   return (
-     <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme}>
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <SiteHeader />
@@ -58,6 +86,5 @@ const App = () => {
     </ThemeProvider>
   );
 };
-
 const rootElement = createRoot( document.getElementById("root") )
 rootElement.render(<App />);

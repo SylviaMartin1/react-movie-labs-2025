@@ -9,6 +9,7 @@ import Fab from "@mui/material/Fab";
 import Typography from "@mui/material/Typography";
 import Drawer from "@mui/material/Drawer";
 import MovieReviews from "../movieReviews"
+import MovieRecommendations from "../movieRecommendations";
 
 const root = {
     display: "flex",
@@ -26,7 +27,7 @@ const [drawerOpen, setDrawerOpen] = useState(false);
 
   return (
     <>
-      <Typography variant="h5" component="h3" sx={{ mb: 2 }} >
+      <Typography variant="h5" component="h3" sx={{ mb: 2, fontWeight: "bold" }} >
         Overview
       </Typography>
 
@@ -77,6 +78,13 @@ const [drawerOpen, setDrawerOpen] = useState(false);
         ))}
      </Paper>
 
+      <Paper component="ul" sx={{...root, mt:6}}>
+        <Typography variant="h5" component="h3" sx={{ mb: 2, fontWeight: "bold", color:"#fff" }} >
+        Recommended Movies
+      </Typography>
+       <MovieRecommendations movie={movie} />
+      </Paper>
+
            <Fab
         color="secondary"
         variant="extended"
@@ -93,7 +101,6 @@ const [drawerOpen, setDrawerOpen] = useState(false);
       <Drawer anchor="top" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
         <MovieReviews movie={movie} />
       </Drawer>
-
       </>
   );
 };

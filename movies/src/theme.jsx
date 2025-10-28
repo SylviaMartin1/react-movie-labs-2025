@@ -1,9 +1,19 @@
+/**
+ * @file theme.jsx
+ * @description Custom Material UI Theme for the app
+ */
 import { createTheme } from '@mui/material/styles';
 
+/**
+ * @function createTheme()
+ * @description Defines the main colours and typography used in the app
+ * - Palette: primary (red), secondary (grey/black), background (grey/black)
+ * - Typography: bold H5 headings
+ */
 const theme = createTheme({
   palette: {
     primary: {
-      light: '#ff4d4d',
+      light: '#ff4d4d', 
       main: '#e50914',
       dark: '#b0060f',
       contrastText: '#ffffff',
@@ -21,7 +31,7 @@ const theme = createTheme({
   },
    typography: {
     h5: {
-      fontWeight: 'bold', 
+      fontWeight: 'bold',    
     },
   }
 });

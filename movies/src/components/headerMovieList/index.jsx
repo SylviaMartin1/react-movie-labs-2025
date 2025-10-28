@@ -25,7 +25,7 @@ const Header = (props ) => {
       </IconButton>
 
 
-      <Typography variant="h4" component="h3" sx={{ color: '#ffffff' }} >
+      <Typography variant="h4" component="h3" sx={{ color: "primary.contrastText", fontWeight:"bold", fontFamily: "Poppins"}} >
         {title}
       </Typography>
 

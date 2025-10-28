@@ -16,7 +16,7 @@ const AddToFavoritesIcon = ({ movie }) => {
   return (
     <Tooltip title="Add to Favourites" arrow>
     <IconButton aria-label="add to favorites" onClick={handleAddToFavorites }>
-          <FavoriteIcon color="primary" fontSize="large" sx={{ '&:hover': { color: 'pink'} }} />
+    <FavoriteIcon color="primary" fontSize="large" sx={{ '&:hover': { color: 'pink'} }} />
     </IconButton>
     </Tooltip>
   );
