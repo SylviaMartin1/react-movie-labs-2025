@@ -9,10 +9,10 @@ import AddToMustWatchIcon from '../components/cardIcons/addToMustWatch'
 
 //2. Main Functionality
 /**
- * Homepage
+ * SearchPage
  * useQuery() fetches the data from the TMDB api using the key and function
  */
-const HomePage = (props) => {
+const SearchPage = (props) => {
   const { data, error, isPending, isError  } = useQuery({
     queryKey: ['discover'],
     queryFn: getMovies,
@@ -52,8 +52,8 @@ const HomePage = (props) => {
    */
      return (
       <PageTemplate
-        title="🎞️ Discover Movies"
-        infoDescription="This is the homepage where you can discover new movies to watch, learn more about them, mark them as favourites, or add them to your watchlist."
+        title="🔎 Search"
+        infoDescription="This is the search page where you can explore and search for movies you might want to watch."
         movies={movies}
         action={(movie) => {
           return (
@@ -66,4 +66,4 @@ const HomePage = (props) => {
       />
   );
 };
-export default HomePage;
+export default SearchPage;

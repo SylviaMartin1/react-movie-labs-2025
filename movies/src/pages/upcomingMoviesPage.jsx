@@ -43,6 +43,7 @@ const UpcomingMoviesPage = () => {
       return (
       <PageTemplate
         title="📅Upcoming Releases"
+         infoDescription="This page displays movies that will be available for viewing or streaming soon."
         movies={movies}
         action={(movie) => {
          return (

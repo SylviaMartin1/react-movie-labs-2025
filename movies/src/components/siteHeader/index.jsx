@@ -41,7 +41,7 @@ const SiteHeader = () => {
     { label: <MovieIcon />, path: "/movies/upcoming", title: "Upcoming Movies" }, //Upcoming Movies page
     { label: <FavoriteIcon />, path: "/movies/favorites", title: "Favourites" }, //Favourite page
     { label: <WatchLaterIcon />, path: "/movies/mustWatch", title: "Watch Later" }, //Watchlist page
-    { label: <SearchIcon />, path: "/", title: "Search" }, //Search page
+    { label: <SearchIcon />, path: "/movies/search", title: "Search" }, //Search page
   ];
 
   const handleMenuSelect = (pageURL) => {

@@ -1,6 +1,6 @@
 /**
  * @file tmdb-api.jsx 
- * @description functions to fetch endpoints from TMDB API
+ * @description functions to fetch endpoints from the TMDB API
  */
 
 //1. Static Endpoints
@@ -220,6 +220,78 @@ export const getMovie = (args) => {
       throw error
    });
   };
+
+/**
+ * getMovieCredits()
+ * function to fetch a specific movie's credits from the TMDB API using its ID
+ * @author Sylvia Martin
+ */
+ export const getMovieCredits = ({ queryKey }) => {
+    const [, idPart] = queryKey;
+    const { id } = idPart;
+    return fetch(
+      `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${import.meta.env.VITE_TMDB_KEY}`
+    ).then( (response) => {
+      if (!response.ok) {
+        return response.json().then((error) => {
+          throw new Error(error.status_message || "Something went wrong");
+        });
+      }
+      return response.json();
+    })
+    .catch((error) => {
+      throw error
+   });
+  };
+
+/**
+ * getMovieStreamingProviders()
+ * function to fetch a specific movie's streaming providers from the TMDB API using its ID
+ * @author Sylvia Martin
+ */
+ export const getMovieStreamingProviders = ({ queryKey }) => {
+    const [, idPart] = queryKey;
+    const { id } = idPart;
+    return fetch(
+      `https://api.themoviedb.org/3/movie/${id}/watch/providers?api_key=${import.meta.env.VITE_TMDB_KEY}`
+    ).then( (response) => {
+      if (!response.ok) {
+        return response.json().then((error) => {
+          throw new Error(error.status_message || "Something went wrong");
+        });
+      }
+      return response.json();
+    })
+    .catch((error) => {
+      throw error
+   });
+  };
+
+/**
+ * getMovieWatchProviders()
+ * function to fetch a specific movie's streaming providers from the TMDB API using its ID
+ * @author Sylvia Martin
+ */
+ export const getSimilarMovies = ({ queryKey }) => {
+    const [, idPart] = queryKey;
+    const { id } = idPart;
+    return fetch(
+      `https://api.themoviedb.org/3/movie/${id}/similar?api_key=${import.meta.env.VITE_TMDB_KEY}`
+    ).then( (response) => {
+      if (!response.ok) {
+        return response.json().then((error) => {
+          throw new Error(error.status_message || "Something went wrong");
+        });
+      }
+      return response.json();
+    })
+    .catch((error) => {
+      throw error
+   });
+  };
+
+
+
 
 
 

@@ -10,6 +10,10 @@ import Typography from "@mui/material/Typography";
 import Drawer from "@mui/material/Drawer";
 import MovieReviews from "../movieReviews"
 import MovieRecommendations from "../movieRecommendations";
+import MovieCast from "../movieCast";
+import MovieStreamingProviders from "../movieStreamingProviders";
+import SimilarMovies from "../similarMovies";
+import InfoButton from "../infoButton";
 
 const root = {
     display: "flex",
@@ -37,7 +41,7 @@ const [drawerOpen, setDrawerOpen] = useState(false);
 
       <Paper 
         component="ul" 
-        sx={{...root}}
+        sx={{...root, }}
       >
         <li>
           <Chip label="Genres" sx={{...chip}} color="primary" />
@@ -78,12 +82,43 @@ const [drawerOpen, setDrawerOpen] = useState(false);
         ))}
      </Paper>
 
-      <Paper component="ul" sx={{...root, mt:6}}>
+      <Paper component="ul" sx={{...root, mt:6,display: 'flex', flexDirection: 'column', alignItems: 'flex-start'}}>
         <Typography variant="h5" component="h3" sx={{ mb: 2, fontWeight: "bold", color:"#fff" }} >
         Recommended Movies
+         <InfoButton description="Based on user ratings and favourite data." />
       </Typography>
        <MovieRecommendations movie={movie} />
       </Paper>
+
+      <Paper component="ul" sx={{...root, mt:6, display: 'flex', flexDirection: 'column', alignItems: 'flex-start'}}>
+        <Typography variant="h5" component="h3" sx={{ mb: 2, fontWeight: "bold", color:"#fff" }} >
+        Similar Movies
+         <InfoButton description="Based on keywords and genres." />
+      </Typography>
+       <SimilarMovies movie={movie} />
+      </Paper>
+
+        <Paper component="ul" sx={{...root, mt:6, display: 'flex', flexDirection: 'column', alignItems: 'flex-start'}}>
+        <Typography variant="h5" component="h3" sx={{ mb: 2, fontWeight: "bold", color:"#fff" }} >
+        Streaming Providers
+      </Typography>
+       <MovieStreamingProviders movie={movie} />
+      </Paper>
+
+       <Paper component="ul" sx={{...root, mt:6, display: 'flex', flexDirection: 'column', alignItems: 'flex-start'}}>
+        <Typography variant="h5" component="h3" sx={{ mb: 2, fontWeight: "bold", color:"#fff" }} >
+        Cast
+      </Typography>
+       <MovieCast movie={movie} />
+      </Paper>
+
+
+
+       
+
+
+       
+
 
            <Fab
         color="secondary"

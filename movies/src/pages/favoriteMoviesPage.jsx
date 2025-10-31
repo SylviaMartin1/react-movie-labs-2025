@@ -37,6 +37,7 @@ const FavoriteMoviesPage = () => {
     return (
     <PageTemplate
       title="❤️Your Favourites"
+      infoDescription="This page lists all of the movies that you have currently added to favourites."
       movies={movies}
       action={(movie) => {
         return (

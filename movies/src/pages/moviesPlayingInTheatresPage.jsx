@@ -48,6 +48,7 @@ const MoviesPlayingInTheatresPage = (props) => {
      return (
       <PageTemplate
         title="📽️Now Playing In Theatres"
+         infoDescription="This page displays the movies that are currently playing in theatres."
         movies={movies}
         action={(movie) => {
          return (

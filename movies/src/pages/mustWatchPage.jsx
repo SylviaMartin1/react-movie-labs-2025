@@ -37,6 +37,7 @@ const MustWatchPage = () => {
      return (
     <PageTemplate
       title="📌Your Watchlist"
+       infoDescription="This page lists all of the movies that you have added to your watch list."
       movies={movies}
       action={(movie) => {
         return (

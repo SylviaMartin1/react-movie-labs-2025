@@ -26,6 +26,7 @@ import MustWatchPage from './pages/mustWatchPage';
 import theme from './theme'
 import { ThemeProvider } from '@mui/material/styles';
 import './index.css';
+import SearchPage from "./pages/searchPage";
 
 //=======================
 // 2. React Query Client
@@ -76,6 +77,7 @@ const App = () => {
             <Route path="/reviews/:id" element={ <MovieReviewPage /> } />
             <Route path="/movies/:id" element={<MoviePage />} />
             <Route path="/reviews/form" element={ <AddMovieReviewPage /> } />
+            <Route path="/movies/search" element={<SearchPage />} />
             <Route path="/" element={<HomePage />} />
             <Route path="*" element={ <Navigate to="/" /> } />
           </Routes>
