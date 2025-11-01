@@ -26,7 +26,7 @@ export default function MovieStreamingProviders({ movie }) {
        <>
         <Grid container spacing={2} justifyContent="flex-start" alignItems="flex-start" >
           {streamingProviders.map((s) => (
-          <Grid size={6}>
+          <Grid item xs={6} sm={4} md={3} lg={2}>
             <Card sx={{ bgcolor: 'secondary.light' }}>
               <CardMedia
               component="img"

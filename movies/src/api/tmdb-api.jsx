@@ -130,6 +130,33 @@ export const getGenres = () => {
    });
   };
 
+  /**
+ * getProviders()
+ * function to fetch a list of providers of movies from the TMDB API
+ * @author Sylvia Martin
+ */
+export const getProviders = () => {
+    return fetch(
+      "https://api.themoviedb.org/3/watch/providers/movie?api_key=" +
+        import.meta.env.VITE_TMDB_KEY +
+        "&language=en-US"
+    ).then( (response) => {
+      if (!response.ok) {
+        return response.json().then((error) => {
+          throw new Error(error.status_message || "Something went wrong");
+        });
+      }
+      return response.json();
+    })
+    .catch((error) => {
+      throw error
+   });
+  };
+
+
+
+
+
 //2. Parameterised Endpoints
 //--------------------------  
 /**

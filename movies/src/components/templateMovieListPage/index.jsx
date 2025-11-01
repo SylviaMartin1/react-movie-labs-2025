@@ -2,10 +2,14 @@ import React, { useState } from "react";
 import Header from "../headerMovieList";
 import MovieList from "../movieList";
 import Grid from "@mui/material/Grid";
+import MovieFilters from "../movieFilters";
+import Fab from '@mui/material/Fab';
+import FilterListIcon from '@mui/icons-material/FilterList';
 
 function MovieListPageTemplate({ movies, title, action, infoDescription }) {
   const [nameFilter, setNameFilter] = useState("");
   const [genreFilter, setGenreFilter] = useState("0");
+  const [showFilters, setShowFilters] = useState(false);
   const genreId = Number(genreFilter);
 
   let displayedMovies = movies
@@ -27,6 +31,24 @@ function MovieListPageTemplate({ movies, title, action, infoDescription }) {
       <Grid size={12}>
         <Header title={title} infoDescription={infoDescription} />
       </Grid>
+
+       {showFilters && (
+      <Grid size={12} sx={{ mb: 2 }}>
+        <MovieFilters
+         onUserInput={handleChange}
+         titleFilter={nameFilter}
+         genreFilter={genreFilter}
+        />
+       </Grid> 
+       )}
+
+        <Fab
+      color="primary"
+      sx={{ position: "fixed", left: 16, bottom: 16 }}
+      onClick={() => setShowFilters(!showFilters)}
+    >
+      <FilterListIcon />
+    </Fab>
 
       <Grid container sx={{flex: "1 1 500px"}}>
         <MovieList action={action} movies={displayedMovies}></MovieList>

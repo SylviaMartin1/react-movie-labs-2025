@@ -107,7 +107,7 @@ const [drawerOpen, setDrawerOpen] = useState(false);
 
        <Paper component="ul" sx={{...root, mt:6, display: 'flex', flexDirection: 'column', alignItems: 'flex-start'}}>
         <Typography variant="h5" component="h3" sx={{ mb: 2, fontWeight: "bold", color:"#fff" }} >
-        Cast
+        Main Cast
       </Typography>
        <MovieCast movie={movie} />
       </Paper>

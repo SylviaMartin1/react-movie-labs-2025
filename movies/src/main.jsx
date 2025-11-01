@@ -27,6 +27,7 @@ import theme from './theme'
 import { ThemeProvider } from '@mui/material/styles';
 import './index.css';
 import SearchPage from "./pages/searchPage";
+import BottomNavBar from './components/bottomNavBar';
 
 //=======================
 // 2. React Query Client
