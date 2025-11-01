@@ -6,6 +6,7 @@ import { getMovie } from "../api/tmdb-api";
 import Spinner from '../components/spinner'
 import RemoveFromFavorites from "../components/cardIcons/removeFromFavorites";
 import WriteReview from "../components/cardIcons/writeReview";
+import ClearFavoritesFab from "../components/cardIcons/clearFavorites";
 
 const FavoriteMoviesPage = () => {
   const {favorites: movieIds } = useContext(MoviesContext);
@@ -35,6 +36,7 @@ const FavoriteMoviesPage = () => {
   const toDo = () => true;
 
     return (
+      <>
     <PageTemplate
       title="❤️Your Favourites"
       infoDescription="This page lists all of the movies that you have currently added to favourites."
@@ -48,6 +50,8 @@ const FavoriteMoviesPage = () => {
         );
       }}
     />
+    <ClearFavoritesFab />
+    </>
   );
 };
 

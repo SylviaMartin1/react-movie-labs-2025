@@ -68,17 +68,13 @@ export default function MovieFilters(props) {
     />
 
     
-        <IconButton onClick={props.onSortAscending} sx={{ color: "white" }} >
-          
+       <IconButton onClick={props.onSortAscending} sx={{ color: "white" }} >    
         <ArrowUpwardIcon />
       </IconButton>
      
       <IconButton onClick={props.onSortDescending} sx={{ color: "white" }}>
         <ArrowDownwardIcon />
       </IconButton>
-
-
-
 
         <FormControl  variant="filled" sx={{...formControl, m: 1, minWidth: 200, backgroundColor: "#fff"}}>
           <InputLabel id="genre-label" sx={{ color: "#000" }}>Genre</InputLabel>
