@@ -10,7 +10,18 @@ function MovieListPageTemplate({ movies, title, action, infoDescription }) {
   const [nameFilter, setNameFilter] = useState("");
   const [genreFilter, setGenreFilter] = useState("0");
   const [showFilters, setShowFilters] = useState(false);
+  const [sortAscending, setSortAscending] = useState(false);
+  
   const genreId = Number(genreFilter);
+
+   const handleChange = (type, value) => {
+    if (type === "name") setNameFilter(value);
+    else setGenreFilter(value);
+  };
+
+  const handleSortAscending = () => {
+  setSortAscending(prev => !prev);
+};
 
   let displayedMovies = movies
     .filter((m) => {
@@ -20,10 +31,11 @@ function MovieListPageTemplate({ movies, title, action, infoDescription }) {
       return genreId > 0 ? m.genre_ids.includes(genreId) : true;
     });
 
-  const handleChange = (type, value) => {
-    if (type === "name") setNameFilter(value);
-    else setGenreFilter(value);
-  };
+    if (sortAscending) {
+  displayedMovies.sort((a, b) => a.title.localeCompare(b.title));
+}
+
+ 
 
   return (
     <Grid container>
@@ -38,6 +50,7 @@ function MovieListPageTemplate({ movies, title, action, infoDescription }) {
          onUserInput={handleChange}
          titleFilter={nameFilter}
          genreFilter={genreFilter}
+         onSortAscending={handleSortAscending}
         />
        </Grid> 
        )}

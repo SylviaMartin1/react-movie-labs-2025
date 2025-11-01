@@ -9,6 +9,10 @@ import MenuItem from "@mui/material/MenuItem";
 import TextField from "@mui/material/TextField";
 import Spinner from '../spinner';
 import Box from "@mui/material/Box";
+import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
+import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
+import { IconButton } from "@mui/material";
+import Tooltip from '@mui/material/Tooltip';
 
 const formControl = 
   {
@@ -62,6 +66,20 @@ export default function MovieFilters(props) {
               value={props.titleFilter}
               onChange={handleTextChange}
     />
+
+    
+        <IconButton onClick={props.onSortAscending} sx={{ color: "white" }} >
+          
+        <ArrowUpwardIcon />
+      </IconButton>
+     
+      <IconButton sx={{ color: "white" }}>
+        <ArrowDownwardIcon />
+      </IconButton>
+
+
+
+
         <FormControl  variant="filled" sx={{...formControl, m: 1, minWidth: 200, backgroundColor: "#fff"}}>
           <InputLabel id="genre-label" sx={{ color: "#000" }}>Genre</InputLabel>
             <Select
