@@ -73,7 +73,7 @@ export default function MovieFilters(props) {
         <ArrowUpwardIcon />
       </IconButton>
      
-      <IconButton sx={{ color: "white" }}>
+      <IconButton onClick={props.onSortDescending} sx={{ color: "white" }}>
         <ArrowDownwardIcon />
       </IconButton>
 

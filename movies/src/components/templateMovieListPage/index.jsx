@@ -11,6 +11,7 @@ function MovieListPageTemplate({ movies, title, action, infoDescription }) {
   const [genreFilter, setGenreFilter] = useState("0");
   const [showFilters, setShowFilters] = useState(false);
   const [sortAscending, setSortAscending] = useState(false);
+  const [sortDescending, setSortDescending] = useState(false);
   
   const genreId = Number(genreFilter);
 
@@ -23,6 +24,11 @@ function MovieListPageTemplate({ movies, title, action, infoDescription }) {
   setSortAscending(prev => !prev);
 };
 
+const handleSortDescending = () => {
+  setSortDescending(prev => !prev); 
+  setSortAscending(false); 
+}
+
   let displayedMovies = movies
     .filter((m) => {
       return m.title.toLowerCase().search(nameFilter.toLowerCase()) !== -1;
@@ -33,6 +39,9 @@ function MovieListPageTemplate({ movies, title, action, infoDescription }) {
 
     if (sortAscending) {
   displayedMovies.sort((a, b) => a.title.localeCompare(b.title));
+}
+else if (sortDescending) {
+  displayedMovies.sort((a, b) => b.title.localeCompare(a.title));
 }
 
  
@@ -51,6 +60,7 @@ function MovieListPageTemplate({ movies, title, action, infoDescription }) {
          titleFilter={nameFilter}
          genreFilter={genreFilter}
          onSortAscending={handleSortAscending}
+         onSortDescending={handleSortDescending}
         />
        </Grid> 
        )}
