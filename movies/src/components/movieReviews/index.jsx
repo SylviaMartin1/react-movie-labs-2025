@@ -31,18 +31,18 @@ export default function MovieReviews({ movie }) {
 
 
   return (
-    <TableContainer component={Paper}>
+    <TableContainer component={Paper} sx={{  backgroundColor: "#2a2a2a" }}>
       <Table sx={{minWidth: 550}} aria-label="reviews table">
         <TableHead>
           <TableRow>
-            <TableCell >Author</TableCell>
-            <TableCell align="center">Excerpt</TableCell>
-            <TableCell align="right">More</TableCell>
+            <TableCell sx={{ color: "white" }}>Author</TableCell>
+            <TableCell sx={{ color: "white" }} align="center">Excerpt</TableCell>
+            <TableCell sx={{ color: "white" }} align="right">More</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {reviews.map((r) => (
-            <TableRow key={r.id}>
+            <TableRow key={r.id} sx={{ '& td, & th': { color: 'white' } }}>
               <TableCell component="th" scope="row">
                 {r.author}
               </TableCell>

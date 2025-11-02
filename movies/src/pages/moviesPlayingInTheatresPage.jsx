@@ -48,7 +48,12 @@ const MoviesPlayingInTheatresPage = (props) => {
      return (
       <PageTemplate
         title="📽️Now Playing In Theatres"
-         infoDescription="This page displays the movies that are currently playing in theatres."
+        infoDescription="🎫Welcome to the Now Playing in Theatres page where you can:
+        • View movies that are currently in theatre,
+        • Learn more about the movies by clicking the view button
+        • Mark them as favourites using the heart icon 
+        • Add them to your watchlist using the 'add to watchlist' button.
+        • Filter, sort, and search using the refine floating action button on the bottom left."
         movies={movies}
         action={(movie) => {
          return (

@@ -44,10 +44,10 @@ const ActorsPage = (props) => {
 
    return (
     <Box sx={{ p: 3 }}>
-     <PageHeader
+    <PageHeader
      title="🎭 Popular Actors"
-     infoDescription="Browse popular actors from the TMDB database."
-/>
+     infoDescription="🎭Welcome to the Actors page where you can view popular actors."
+    />
 
       <Grid container spacing={3}>
         {actors.map((actor) => (

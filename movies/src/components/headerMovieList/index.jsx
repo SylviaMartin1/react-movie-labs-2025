@@ -6,6 +6,7 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import { useNavigate } from "react-router";
 import InfoButton from "../infoButton";
+import StatsButton from "../statsButton";
 
 
 const Header = (props ) => {
@@ -28,6 +29,7 @@ const Header = (props ) => {
       </IconButton>
 
       <div style={{ display: "flex", alignItems: "center", gap: "4px" }}>
+       <StatsButton /> 
       <InfoButton description={infoDescription}/>
       <Typography variant="h4" component="h3" sx={{ color: "primary.contrastText", fontWeight:"bold", fontFamily: "Poppins"}} >
         {title}

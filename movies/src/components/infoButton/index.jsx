@@ -23,7 +23,7 @@ export default function InfoButton({ description }) {
     <Dialog open={open} onClose={handleClose} sx={{color:'grey'}}>
         <DialogTitle sx={{color:'white'}}>About  </DialogTitle>
         <DialogContent>
-          <Typography variant="body1" sx={{ mt: 1, color:'white'}}>
+          <Typography variant="body1" sx={{ mt: 1, color:'white', whiteSpace: "pre-line"}}>
             {description || "This page provides useful information."}
           </Typography>
         </DialogContent>

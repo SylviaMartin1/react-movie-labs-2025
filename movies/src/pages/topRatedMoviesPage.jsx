@@ -48,7 +48,12 @@ const TopRatedMoviesPage = (props) => {
      return (
       <PageTemplate
         title="⭐Top Rated Movies"
-         infoDescription="This page displays the most rated movies of all time."
+        infoDescription="🏅Welcome to the Top Rated Movies page where you can:
+        • View the top rated movies of all time,
+        • Learn more about the movies by clicking the view button
+        • Mark them as favourites using the heart icon 
+        • Add them to your watchlist using the 'add to watchlist' button.
+        • Filter, sort, and search using the refine floating action button on the bottom left."
         movies={movies}
         action={(movie) => {
           return (

@@ -71,13 +71,16 @@ export default function MovieFilters(props) {
               onChange={handleTextChange}
     />
 
-    
+    <Tooltip title="Sort A-Z" arrow>
        <IconButton onClick={props.onSortAscending} sx={{ color: "white" }} >    
         <ArrowUpwardIcon />
       </IconButton>
+      </Tooltip>
+      <Tooltip title="Sort Z-A" arrow>
       <IconButton onClick={props.onSortDescending} sx={{ color: "white" }}>
         <ArrowDownwardIcon />
       </IconButton>
+      </Tooltip>
 
         <FormControl  variant="filled" sx={{...formControl, m: 1, minWidth: 150, backgroundColor: "#fff"}}>
           <InputLabel id="genre-label" sx={{ color: "#000" }}>Genre</InputLabel>
@@ -132,6 +135,11 @@ export default function MovieFilters(props) {
             <MenuItem value="2021">2021</MenuItem>
             <MenuItem value="2020">2020</MenuItem>
             <MenuItem value="2019">2019</MenuItem>
+            <MenuItem value="Before 2010">Before 2010</MenuItem>
+            <MenuItem value="Before 2000">Before 2000</MenuItem>
+            <MenuItem value="Before 1990">Before 1990</MenuItem>
+            <MenuItem value="Before 1980">Before 1980</MenuItem>
+            <MenuItem value="Before 1970">Before 1970</MenuItem>
           </Select>
         </FormControl>
 
@@ -142,6 +150,8 @@ export default function MovieFilters(props) {
         <InputLabel id="language-label" sx={{ color: "#000" }}>
           Language
         </InputLabel>
+
+
         <Select
           labelId="language-label"
           id="language-select"
@@ -155,14 +165,15 @@ export default function MovieFilters(props) {
                 }
               }}
         >
-          <MenuItem value="All">All</MenuItem>
-          <MenuItem value="en">English</MenuItem>        
-          <MenuItem value="fr">French</MenuItem>
-           <MenuItem value="es">Spanish</MenuItem>
-            <MenuItem value="de">German</MenuItem>
-          <MenuItem value="ja">Japanese</MenuItem>
-          <MenuItem value="ko">Korean</MenuItem>
-          <MenuItem value="hi">Hindi</MenuItem>
+        <MenuItem value="All">All</MenuItem>
+        <MenuItem value="en">English</MenuItem>
+        <MenuItem value="fr">French</MenuItem>
+        <MenuItem value="es">Spanish</MenuItem>
+        <MenuItem value="de">German</MenuItem>
+        <MenuItem value="it">Italian</MenuItem>
+        <MenuItem value="ja">Japanese</MenuItem>
+        <MenuItem value="zh">Chinese</MenuItem>
+
         </Select>
       </FormControl>
       <FormControl

@@ -39,7 +39,11 @@ const FavoriteMoviesPage = () => {
       <>
     <PageTemplate
       title="❤️Your Favourites"
-      infoDescription="This page lists all of the movies that you have currently added to favourites."
+      infoDescription="🎫Welcome to the Favorite Movies page where you can:
+        • View movies that you have marked as favourites,
+        • Remove them from the list 
+        • Add reviews for them
+        • Filter, sort, and search using the refine floating action button on the bottom left."
       movies={movies}
       action={(movie) => {
         return (

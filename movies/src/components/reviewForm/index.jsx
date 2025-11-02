@@ -11,7 +11,6 @@ import React, { useState, useContext } from "react";
 import { MoviesContext } from "../../contexts/moviesContext";
 
 
-
 const ratings = [
   {
     value: 5,
@@ -35,7 +34,6 @@ const ratings = [
   },
 ];
 
- 
 
 const styles = {
   root: {
@@ -137,7 +135,12 @@ const ReviewForm = ({ movie }) => {
           defaultValue=""
           render={({ field: { onChange, value } }) => (
             <TextField
-              sx={{ width: "40ch" }}
+              sx={{ 
+                width: "40ch",
+                 "& .MuiInputBase-input": {
+                  backgroundColor: "white",
+                 }
+               }}
               variant="outlined"
               margin="normal"
               required
@@ -165,6 +168,11 @@ const ReviewForm = ({ movie }) => {
           defaultValue=""
           render={({ field: { onChange, value } }) => (
             <TextField
+            sx={{ 
+                 "& .MuiInputBase-input": {
+                  backgroundColor: "white",
+                 }
+               }}
               variant="outlined"
               margin="normal"
               required
@@ -190,6 +198,11 @@ const ReviewForm = ({ movie }) => {
           name="rating"
           render={({ field: { onChange, value } }) => (
             <TextField
+             sx={{ 
+                 "& .MuiInputBase-input": {
+                  backgroundColor: "white",
+                 }
+               }}
               id="select-rating"
               select
               variant="outlined"
@@ -199,7 +212,7 @@ const ReviewForm = ({ movie }) => {
               helperText="Don't forget your rating"
             >
               {ratings.map((option) => (
-                <MenuItem key={option.value} value={option.value}>
+                <MenuItem  sx={{color: "white"}}key={option.value} value={option.value}>
                   {option.label}
                 </MenuItem>
               ))}
@@ -216,10 +229,11 @@ const ReviewForm = ({ movie }) => {
           >
             Submit
           </Button>
+
           <Button
             type="reset"
             variant="contained"
-            color="secondary"
+            color="primary"
             sx={styles.submit}
             onClick={() => {
               reset({

@@ -5,6 +5,7 @@ import Grid from "@mui/material/Grid";
 import MovieFilters from "../movieFilters";
 import Fab from '@mui/material/Fab';
 import FilterListIcon from '@mui/icons-material/FilterList';
+import Tooltip from '@mui/material/Tooltip';
 
 function MovieListPageTemplate({ movies, title, action, infoDescription }) {
   const [nameFilter, setNameFilter] = useState("");
@@ -45,9 +46,13 @@ const handleSortDescending = () => {
       return genreId > 0 ? m.genre_ids.includes(genreId) : true;
     })
     .filter((m) => {
-      return yearFilter === "All"
-        ? true
-        : m.release_date?.slice(0, 4) === yearFilter;
+      if (yearFilter === "All") return true;
+      if (yearFilter === "Before 2010") return Number(m.release_date?.slice(0,4)) < 2010;
+      if (yearFilter === "Before 2000") return Number(m.release_date?.slice(0,4)) < 2000;
+      if (yearFilter === "Before 1990") return Number(m.release_date?.slice(0,4)) < 1990;
+      if (yearFilter === "Before 1980") return Number(m.release_date?.slice(0,4)) < 1980;
+      if (yearFilter === "Before 1970") return Number(m.release_date?.slice(0,4)) < 1970;
+      return m.release_date?.slice(0, 4) === yearFilter;
     })
      .filter((m) => {
       return languageFilter === "All"
@@ -91,16 +96,18 @@ else if (sortDescending) {
        </Grid> 
        )}
 
-        <Fab
+      <Tooltip title="Refine" arrow>
+      <Fab
       color="primary"
       sx={{ position: "fixed", left: 16, bottom: 16 }}
       onClick={() => setShowFilters(!showFilters)}
     >
       <FilterListIcon />
     </Fab>
+    </Tooltip>
 
       <Grid container sx={{flex: "1 1 500px"}}>
-        <MovieList action={action} movies={displayedMovies}></MovieList>
+      <MovieList action={action} movies={displayedMovies}></MovieList>
       </Grid>
     </Grid>
   );

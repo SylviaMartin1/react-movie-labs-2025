@@ -47,7 +47,12 @@ const TrendingMoviesPage = (props) => {
      return (
       <PageTemplate
         title="🔥Trending Now "
-         infoDescription="This page displays the movies that are trending this week."
+        infoDescription="🔥Welcome to the Trending Now page where you can:
+        • View movies trending this week,
+        • Learn more about the movies by clicking the view button
+        • Mark them as favourites using the heart icon 
+        • Add them to your watchlist using the 'add to watchlist' button.
+        • Filter, sort, and search using the refine floating action button on the bottom left."
         movies={movies}
         action={(movie) => {
           return (

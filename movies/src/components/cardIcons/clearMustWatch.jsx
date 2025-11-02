@@ -40,7 +40,7 @@ const ClearMustWatchFab = ({ movie }) => {
     <Tooltip title="Clear watchlist" arrow>
     <Fab
       color="primary"
-      sx={{ position: "fixed", top: 64, left: 16 }}
+      sx={{ position: "fixed", top: 64, left: 26 }}
       onClick={handleOpenDialog}
       aria-label="clear watchlist"
     >

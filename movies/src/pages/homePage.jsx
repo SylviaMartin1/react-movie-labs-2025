@@ -53,7 +53,12 @@ const HomePage = (props) => {
      return (
       <PageTemplate
         title="🎞️ Discover Movies"
-        infoDescription="This is the homepage where you can discover new movies to watch, learn more about them, mark them as favourites, or add them to your watchlist."
+        infoDescription="🏠Welcome to the homepage where you can:
+        • Browse through a listing of movies which you may find interesting,
+        • Learn more about movies by clicking the view button
+        • Mark them as favourites using the heart icon 
+        • Add them to your watchlist using the 'add to watchlist' button.
+        • Filter, sort, and search using the refine floating action button on the bottom left."
         movies={movies}
         action={(movie) => {
           return (
