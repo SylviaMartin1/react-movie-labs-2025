@@ -26,7 +26,7 @@ import MustWatchPage from './pages/mustWatchPage';
 import theme from './theme'
 import { ThemeProvider } from '@mui/material/styles';
 import './index.css';
-import SearchPage from "./pages/searchPage";
+import ActorsPage from "./pages/actorsPage";
 import BottomNavBar from './components/bottomNavBar';
 
 //=======================
@@ -78,7 +78,7 @@ const App = () => {
             <Route path="/reviews/:id" element={ <MovieReviewPage /> } />
             <Route path="/movies/:id" element={<MoviePage />} />
             <Route path="/reviews/form" element={ <AddMovieReviewPage /> } />
-            <Route path="/movies/search" element={<SearchPage />} />
+            <Route path="/movies/actors" element={<ActorsPage />} />
             <Route path="/" element={<HomePage />} />
             <Route path="*" element={ <Navigate to="/" /> } />
           </Routes>

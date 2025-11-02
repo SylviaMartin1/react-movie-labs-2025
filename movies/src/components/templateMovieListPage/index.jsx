@@ -9,19 +9,27 @@ import FilterListIcon from '@mui/icons-material/FilterList';
 function MovieListPageTemplate({ movies, title, action, infoDescription }) {
   const [nameFilter, setNameFilter] = useState("");
   const [genreFilter, setGenreFilter] = useState("0");
+  const [yearFilter, setYearFilter] = useState("All");
+  const [languageFilter, setLanguageFilter] = useState("All");
+  const [ratingFilter, setRatingFilter] = useState("All");
   const [showFilters, setShowFilters] = useState(false);
   const [sortAscending, setSortAscending] = useState(false);
   const [sortDescending, setSortDescending] = useState(false);
+
   
   const genreId = Number(genreFilter);
 
    const handleChange = (type, value) => {
     if (type === "name") setNameFilter(value);
-    else setGenreFilter(value);
+    else if (type === "genre")setGenreFilter(value);
+    else if (type === "year") setYearFilter(value);
+    else if (type === "language") setLanguageFilter(value);
+    else if (type === "rating") setRatingFilter(value);
   };
 
   const handleSortAscending = () => {
   setSortAscending(prev => !prev);
+  setSortDescending(false);
 };
 
 const handleSortDescending = () => {
@@ -35,16 +43,31 @@ const handleSortDescending = () => {
     })
     .filter((m) => {
       return genreId > 0 ? m.genre_ids.includes(genreId) : true;
+    })
+    .filter((m) => {
+      return yearFilter === "All"
+        ? true
+        : m.release_date?.slice(0, 4) === yearFilter;
+    })
+     .filter((m) => {
+      return languageFilter === "All"
+        ? true
+        : m.original_language === languageFilter;
+    })
+    .filter((m) => {
+    return ratingFilter === "All"
+    ? true
+    : m.vote_average >= Number(ratingFilter);
     });
+  
 
-    if (sortAscending) {
-  displayedMovies.sort((a, b) => a.title.localeCompare(b.title));
-}
+        if (sortAscending) {
+         displayedMovies.sort((a, b) => a.title.localeCompare(b.title));
+      }
+      
 else if (sortDescending) {
   displayedMovies.sort((a, b) => b.title.localeCompare(a.title));
 }
-
- 
 
   return (
     <Grid container>
@@ -59,6 +82,9 @@ else if (sortDescending) {
          onUserInput={handleChange}
          titleFilter={nameFilter}
          genreFilter={genreFilter}
+          yearFilter={yearFilter}
+          languageFilter={languageFilter}
+          ratingFilter={ratingFilter}
          onSortAscending={handleSortAscending}
          onSortDescending={handleSortDescending}
         />

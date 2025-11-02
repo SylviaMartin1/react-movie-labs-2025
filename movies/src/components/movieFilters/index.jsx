@@ -54,6 +54,10 @@ export default function MovieFilters(props) {
     handleChange(e, "genre", e.target.value);
   };
 
+   const handleYearChange = (e) => {
+    handleChange(e, "year", e.target.value);
+  };
+
   return (
     <>
       <Box sx={{ display: "flex", alignItems: "center", gap: 2, p: 1, flexWrap: "wrap" }}>
@@ -71,12 +75,11 @@ export default function MovieFilters(props) {
        <IconButton onClick={props.onSortAscending} sx={{ color: "white" }} >    
         <ArrowUpwardIcon />
       </IconButton>
-     
       <IconButton onClick={props.onSortDescending} sx={{ color: "white" }}>
         <ArrowDownwardIcon />
       </IconButton>
 
-        <FormControl  variant="filled" sx={{...formControl, m: 1, minWidth: 200, backgroundColor: "#fff"}}>
+        <FormControl  variant="filled" sx={{...formControl, m: 1, minWidth: 150, backgroundColor: "#fff"}}>
           <InputLabel id="genre-label" sx={{ color: "#000" }}>Genre</InputLabel>
             <Select
               labelId="genre-label"
@@ -84,15 +87,13 @@ export default function MovieFilters(props) {
               defaultValue=""
               value={props.genreFilter}
               onChange={handleGenreChange}
-               MenuProps={{
-      PaperProps: {
-        sx: {
-          '& .MuiMenuItem-root': { color: '#fff' } // makes the dropdown text white
-        }
-      }
-    }}
-            >
-
+              MenuProps={{
+              PaperProps: {
+                sx: {
+                  '& .MuiMenuItem-root': { color: '#fff' } // makes the dropdown text white
+                  }
+                }
+              }}>
             {genres.map((genre) => {
               return (
                 <MenuItem key={genre.id} value={genre.id}>
@@ -102,6 +103,98 @@ export default function MovieFilters(props) {
             })}
           </Select>
         </FormControl>
+
+        <FormControl
+          variant="filled"
+          sx={{ ...formControl, m: 1, minWidth: 150, backgroundColor: "#fff" }}
+        >
+          <InputLabel id="year-label" sx={{ color: "#000" }}>
+            Year
+          </InputLabel>
+          <Select
+            labelId="year-label"
+            id="year-select"
+            value={props.yearFilter}
+            onChange={handleYearChange}
+            MenuProps={{
+              PaperProps: {
+                sx: {
+                  '& .MuiMenuItem-root': { color: '#fff' } // makes the dropdown text white
+                  }
+                }
+              }}
+          >
+            <MenuItem value="All">All</MenuItem>
+            <MenuItem value="2025">2025</MenuItem>
+            <MenuItem value="2024">2024</MenuItem>
+            <MenuItem value="2023">2023</MenuItem>
+            <MenuItem value="2022">2022</MenuItem>
+            <MenuItem value="2021">2021</MenuItem>
+            <MenuItem value="2020">2020</MenuItem>
+            <MenuItem value="2019">2019</MenuItem>
+          </Select>
+        </FormControl>
+
+        <FormControl
+        variant="filled"
+        sx={{ ...formControl, m: 1, minWidth: 150, backgroundColor: "#fff" }}
+      >
+        <InputLabel id="language-label" sx={{ color: "#000" }}>
+          Language
+        </InputLabel>
+        <Select
+          labelId="language-label"
+          id="language-select"
+          value={props.languageFilter}
+          onChange={(e) => props.onUserInput("language", e.target.value)}
+          MenuProps={{
+              PaperProps: {
+                sx: {
+                  '& .MuiMenuItem-root': { color: '#fff' } // makes the dropdown text white
+                  }
+                }
+              }}
+        >
+          <MenuItem value="All">All</MenuItem>
+          <MenuItem value="en">English</MenuItem>        
+          <MenuItem value="fr">French</MenuItem>
+           <MenuItem value="es">Spanish</MenuItem>
+            <MenuItem value="de">German</MenuItem>
+          <MenuItem value="ja">Japanese</MenuItem>
+          <MenuItem value="ko">Korean</MenuItem>
+          <MenuItem value="hi">Hindi</MenuItem>
+        </Select>
+      </FormControl>
+      <FormControl
+  variant="filled"
+  sx={{ ...formControl, m: 1, minWidth: 150, backgroundColor: "#fff" }}
+>
+  <InputLabel id="rating-label" sx={{ color: "#000" }}>
+    Minimum Rating
+  </InputLabel>
+  <Select
+    labelId="rating-label"
+    id="rating-select"
+    value={props.ratingFilter}
+    onChange={(e) => props.onUserInput("rating", e.target.value)}
+    MenuProps={{
+              PaperProps: {
+                sx: {
+                  '& .MuiMenuItem-root': { color: '#fff' } // makes the dropdown text white
+                  }
+                }
+              }}
+  >
+    <MenuItem value="All">All</MenuItem>
+    <MenuItem value="9">9+</MenuItem>
+    <MenuItem value="8">8+</MenuItem>
+    <MenuItem value="7">7+</MenuItem>
+    <MenuItem value="6">6+</MenuItem>
+    <MenuItem value="5">5+</MenuItem>
+  </Select>
+</FormControl>
+
+
         </Box>
 </>
   )

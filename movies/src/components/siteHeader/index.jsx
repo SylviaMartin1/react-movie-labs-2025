@@ -20,8 +20,7 @@ import { styled } from '@mui/material/styles';
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Tooltip from '@mui/material/Tooltip';
-
-
+import TheaterComedyIcon from '@mui/icons-material/TheaterComedy';
 
 const Offset = styled('div')(({ theme }) => theme.mixins.toolbar);
 
@@ -42,7 +41,7 @@ const SiteHeader = () => {
     { label: <MovieIcon />, path: "/movies/upcoming", title: "Upcoming Movies" }, //Upcoming Movies page
     { label: <FavoriteIcon />, path: "/movies/favorites", title: "Favourites" }, //Favourite page
     { label: <WatchLaterIcon />, path: "/movies/mustWatch", title: "Watch Later" }, //Watchlist page
-    { label: <SearchIcon />, path: "/movies/search", title: "Search" }, //Search page
+    { label: <TheaterComedyIcon />, path: "/movies/actors", title: "Actors" }, //Search page
   ];
 
   const handleMenuSelect = (pageURL) => {

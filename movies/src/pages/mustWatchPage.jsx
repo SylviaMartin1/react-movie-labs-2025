@@ -7,6 +7,7 @@ import { getMovie } from "../api/tmdb-api";
 import Spinner from '../components/spinner'
 import RemoveFromWatchList from "../components/cardIcons/removeFromWatchList";
 import WriteReview from "../components/cardIcons/writeReview";
+import ClearMustWatchFab from "../components/cardIcons/clearMustWatch";
 
 //2. Main Functionality
 const MustWatchPage = () => {
@@ -35,6 +36,7 @@ const MustWatchPage = () => {
     });
 
      return (
+      <>
     <PageTemplate
       title="📌Your Watchlist"
        infoDescription="This page lists all of the movies that you have added to your watch list."
@@ -48,6 +50,8 @@ const MustWatchPage = () => {
         );
       }}
     />
+    <ClearMustWatchFab />
+    </>
   );
 };
 
