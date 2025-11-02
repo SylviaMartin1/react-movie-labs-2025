@@ -5,7 +5,7 @@
 
 ## 	💠[Description](##Description)
 This app was designed to allow users to explore and browse movies in an easy and visually appealing way. It was built using React and Node.js and uses the TMDb API to fetch movie data.
-> "Design is not just what it looks like and feels like. Design is how it works." - Steve Jobs.
+> "Cinema is a mirror by which we often see ourselves." - Alejandro Gonzalez Inarritu.
 
   ## 💠[Features](##Features)
 - Home page displaying movie cards with links to Movie Details pages
