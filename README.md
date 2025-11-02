@@ -4,6 +4,7 @@
 ![License](https://img.shields.io/badge/license-SETU-blue.svg)
 
 ## 	💠[Description](##Description)
+This app was designed to allow users to explore and browse movies in an easy and visually appealing way. It was built using React and Node.js and uses the TMDb API to fetch movie data.
 > "Design is not just what it looks like and feels like. Design is how it works." - Steve Jobs.
 
   ## 💠[Features](##Features)
