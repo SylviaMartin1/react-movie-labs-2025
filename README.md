@@ -8,7 +8,21 @@ This app was designed to allow users to explore and browse movies in an easy and
 > "Design is not just what it looks like and feels like. Design is how it works." - Steve Jobs.
 
   ## 💠[Features](##Features)
-    
+- Home page displaying movie cards with links to Movie Details pages
+- Trending Movies page showing weekly trending movies
+- Top Rated Movies page showing highest-rated movies
+- Now Playing Movies page showing movies currently in cinemas
+- Upcoming Movies page showing all upcoming releases
+- Movie Details page showing detailed information, cast, recommendations, similar movies, and watch providers
+- Favourites page to add, view, and remove favourite movies
+- Watchlist page to add, view, and remove movies for later
+- Clear All Floating Action Button on Favourites and Watchlist pages
+- Filter panel with Genre, Year, Language, and Minimum Rating filters and fields to search movies by title and sort them in ascending or descending order
+- Pagination to limit the number of movies displayed per page
+- Stats button showing app statistics
+- Info button with page-specific information
+- Emojis used alongside icons for visual appeal
+  
   ## 💠[Usage](##Usage)
 To run this React app locally, ensure you have:
 - Node.js and npm installed
