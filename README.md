@@ -7,7 +7,7 @@
 This app was designed to allow users to explore and browse movies in an easy and visually appealing way. It was built using React and Node.js and uses the TMDb API to fetch movie data.
 > "Cinema is a mirror by which we often see ourselves." - Alejandro Gonzalez Inarritu.
 
-  ## 💠[Features](##Features)
+## 💠[Features](##Features)
 - Home page displaying movie cards with links to Movie Details pages
 - Trending Movies page showing weekly trending movies
 - Top Rated Movies page showing highest-rated movies
@@ -23,7 +23,7 @@ This app was designed to allow users to explore and browse movies in an easy and
 - Info button with page-specific information
 - Emojis used alongside icons for visual appeal
   
-  ## 💠[Usage](##Usage)
+## 💠[Usage](##Usage)
 To run this React app locally, ensure you have:
 - Node.js and npm installed
 - Git to clone the repository
