@@ -10,7 +10,6 @@ import { useNavigate } from "react-router";
 import React, { useState, useContext } from "react";
 import { MoviesContext } from "../../contexts/moviesContext";
 
-
 const ratings = [
   {
     value: 5,
@@ -109,7 +108,7 @@ const ReviewForm = ({ movie }) => {
         Write a review
       </Typography>
 
-            <Snackbar
+        <Snackbar
         sx={styles.snack}
         anchorOrigin={{ vertical: "top", horizontal: "right" }}
         open={open}
@@ -219,6 +218,7 @@ const ReviewForm = ({ movie }) => {
             </TextField>
           )}
         />
+
 
         <Box sx={styles.buttons}>
           <Button

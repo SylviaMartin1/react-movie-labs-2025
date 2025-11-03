@@ -1,15 +1,7 @@
-/**
- * @file theme.jsx
- * @description Custom Material UI Theme for the app
- */
+// MUI Palette Theme - Red, Grey, Black, White
+// Netflix Inspired but not exactly the same
 import { createTheme } from '@mui/material/styles';
 
-/**
- * @function createTheme()
- * @description Defines the main colours and typography used in the app
- * - Palette: primary (red), secondary (grey/black), background (grey/black)
- * - Typography: bold H5 headings
- */
 const theme = createTheme({
   palette: {
     primary: {

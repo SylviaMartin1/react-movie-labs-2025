@@ -16,10 +16,8 @@ const ClearFavoritesFab = ({ movie }) => {
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const [openDialog, setOpenDialog] = useState(false);
 
-   const handleOpenDialog = () => setOpenDialog(true);   
-   const handleCloseDialog = () => setOpenDialog(false); 
-
-
+  const handleOpenDialog = () => setOpenDialog(true);   
+  const handleCloseDialog = () => setOpenDialog(false); 
 
   const handleClearFavorites = (e) => {
     e.preventDefault();
@@ -27,6 +25,8 @@ const ClearFavoritesFab = ({ movie }) => {
     setOpenDialog(false);
     setOpenSnackbar(true);
   };
+  
+   const hasFavorites = context.favorites.length > 0;
 
   const handleCloseSnackbar = (event, reason) => {
     if (reason === 'clickaway') {
@@ -53,12 +53,16 @@ const ClearFavoritesFab = ({ movie }) => {
         <DialogTitle>Clear All Favourites</DialogTitle>
         <DialogContent>
           <Typography variant="body1" sx={{ mt: 1 }}>
-            Are you sure you want to clear all favourites?
+             {hasFavorites
+              ? "Are you sure you want to clear all favourites?"
+              : "Nothing to clear."}
           </Typography>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleCloseDialog}>Cancel</Button>
+           {hasFavorites && (
           <Button onClick={handleClearFavorites} color="error">Yes</Button>
+           )}
         </DialogActions>
       </Dialog>
 

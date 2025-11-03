@@ -48,6 +48,7 @@ const MustWatchPage = () => {
         return (
           <>
            <RemoveFromWatchList movie={movie} />
+           <WriteReview movie={movie} />
           </>
         );
       }}

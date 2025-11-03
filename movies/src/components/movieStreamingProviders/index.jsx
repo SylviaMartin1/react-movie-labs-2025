@@ -20,8 +20,6 @@ export default function MovieStreamingProviders({ movie }) {
 
     const streamingProviders = (data?.results?.IE?.flatrate  || []).concat(data?.results?.IE?.rent  || []);
 
-     
-
     return (
        <>
         <Grid container spacing={2} justifyContent="flex-start" alignItems="flex-start" >
@@ -34,7 +32,7 @@ export default function MovieStreamingProviders({ movie }) {
               image={
                 s.logo_path
                   ? `https://image.tmdb.org/t/p/w500${s.logo_path}`
-                   : "/default-profile.jpg"
+                  : "/default-profile.jpg"
               }
               alt={s.name}
               sx={{width: '150', height: '200', objectFit: 'contain'}}

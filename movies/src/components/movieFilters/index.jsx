@@ -3,7 +3,6 @@ import { getGenres } from "../../api/tmdb-api";
 import { useQuery } from '@tanstack/react-query';
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-import Typography from "@mui/material/Typography";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import TextField from "@mui/material/TextField";
@@ -150,8 +149,6 @@ export default function MovieFilters(props) {
         <InputLabel id="language-label" sx={{ color: "#000" }}>
           Language
         </InputLabel>
-
-
         <Select
           labelId="language-label"
           id="language-select"
@@ -173,42 +170,38 @@ export default function MovieFilters(props) {
         <MenuItem value="it">Italian</MenuItem>
         <MenuItem value="ja">Japanese</MenuItem>
         <MenuItem value="zh">Chinese</MenuItem>
-
         </Select>
       </FormControl>
+      
       <FormControl
-  variant="filled"
-  sx={{ ...formControl, m: 1, minWidth: 150, backgroundColor: "#fff" }}
->
-  <InputLabel id="rating-label" sx={{ color: "#000" }}>
-    Minimum Rating
-  </InputLabel>
-  <Select
-    labelId="rating-label"
-    id="rating-select"
-    value={props.ratingFilter}
-    onChange={(e) => props.onUserInput("rating", e.target.value)}
-    MenuProps={{
+      variant="filled"
+      sx={{ ...formControl, m: 1, minWidth: 150, backgroundColor: "#fff" }}
+      >
+      <InputLabel id="rating-label" sx={{ color: "#000" }}>
+      Minimum Rating
+      </InputLabel>
+      <Select
+      labelId="rating-label"
+      id="rating-select"
+      value={props.ratingFilter}
+      onChange={(e) => props.onUserInput("rating", e.target.value)}
+      MenuProps={{
               PaperProps: {
                 sx: {
                   '& .MuiMenuItem-root': { color: '#fff' } // makes the dropdown text white
                   }
                 }
               }}
-  >
-    <MenuItem value="All">All</MenuItem>
-    <MenuItem value="9">9+</MenuItem>
-    <MenuItem value="8">8+</MenuItem>
-    <MenuItem value="7">7+</MenuItem>
-    <MenuItem value="6">6+</MenuItem>
-    <MenuItem value="5">5+</MenuItem>
-  </Select>
-</FormControl>
-
-
-        </Box>
-</>
-  )
-
-
-}
+              >
+                <MenuItem value="All">All</MenuItem>
+                <MenuItem value="9">9+</MenuItem>
+                <MenuItem value="8">8+</MenuItem>
+                <MenuItem value="7">7+</MenuItem>
+                <MenuItem value="6">6+</MenuItem>
+                <MenuItem value="5">5+</MenuItem>
+                </Select>
+                </FormControl>
+                </Box>
+                </>
+                )
+              }

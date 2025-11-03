@@ -26,7 +26,6 @@ export default function MovieCast({ movie }) {
       </Typography>
     );
   }
-
     return (
        <>
         <Grid container spacing={2}>

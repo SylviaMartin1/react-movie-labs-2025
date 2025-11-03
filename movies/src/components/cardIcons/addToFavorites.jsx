@@ -5,6 +5,7 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import Tooltip from '@mui/material/Tooltip';
 import CloseIcon from '@mui/icons-material/Close';
 import Snackbar from '@mui/material/Snackbar';
+import { Link } from "react-router";
 
 const AddToFavoritesIcon = ({ movie }) => {
   const context = useContext(MoviesContext);
@@ -47,7 +48,14 @@ const AddToFavoritesIcon = ({ movie }) => {
         open={open}
         autoHideDuration={6000}
         onClose={handleClose}
-        message="Added to favorites"
+        message= {
+        <span>
+        Added to favorites!{" "}
+        <Link to="/movies/favorites" style={{ color: "primary", textDecoration: "underline" }}>
+        View favorites
+        </Link>
+        </span>
+        }
         action={action}
       />
     </>

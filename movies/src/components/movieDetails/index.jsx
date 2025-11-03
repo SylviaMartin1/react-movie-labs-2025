@@ -14,6 +14,9 @@ import MovieCast from "../movieCast";
 import MovieStreamingProviders from "../movieStreamingProviders";
 import SimilarMovies from "../similarMovies";
 import InfoButton from "../infoButton";
+import { Link } from "react-router";
+import AddToFavoritesIcon from "../cardIcons/addToFavorites";
+import AddToMustWatchIcon from "../cardIcons/addToMustWatch";
 
 const root = {
     display: "flex",
@@ -25,7 +28,7 @@ const root = {
 };
 const chip = { margin: 0.5 };
 
-const MovieDetails = ({ movie }) => {  // Don't miss this!
+const MovieDetails = ({ movie }) => {  
 const [drawerOpen, setDrawerOpen] = useState(false);
 
 
@@ -112,15 +115,81 @@ const [drawerOpen, setDrawerOpen] = useState(false);
        <MovieCast movie={movie} />
       </Paper>
 
+      <Paper component="div" sx={{ mt: 6 }}>
+      <Typography variant="h5" component="h3" sx={{ mb: 2, fontWeight: "bold", color:"#fff" }} >
+        Jump To
+        </Typography>
 
+      <Paper component="ul" sx={{...root, mt:0, justifyContent: "flex-start", display: 'flex', flexDirection: 'row', alignItems: 'flex-start'}}>
+       <AddToFavoritesIcon movie={movie} sx={{color:"pink"}} />
+       <AddToMustWatchIcon movie={movie} sx={{color: "orange"}}/>
 
-       
+        <Link to="/" style={{ textDecoration: "none" }}>
+        <Chip
+          label="Home"
+          color="primary"
+          clickable
+          sx={{ ...{ color: "#fff" }, margin: 0.5 }}
+          />
+        </Link>
 
+        <Link to="/movies/trending" style={{ textDecoration: "none" }}>
+        <Chip
+          label="Trending"
+          color="primary"
+          clickable
+          sx={{ ...{ color: "#fff" }, margin: 0.5 }}
+          />
+        </Link>
 
-       
+        <Link to="/movies/topRated" style={{ textDecoration: "none" }}>
+        <Chip
+          label="Top Rated"
+          color="primary"
+          clickable
+          sx={{ ...{ color: "#fff" }, margin: 0.5 }}
+          />
+        </Link>
 
+        <Link to="/movies/nowPlayingInTheatres" style={{ textDecoration: "none" }}>
+        <Chip
+          label="In Theatres"
+          color="primary"
+          clickable
+          sx={{ ...{ color: "#fff" }, margin: 0.5 }}
+          />
+        </Link>
 
-           <Fab
+        <Link to="/movies/upcoming" style={{ textDecoration: "none" }}>
+        <Chip
+          label="Upcoming"
+          color="primary"
+          clickable
+          sx={{ ...{ color: "#fff" }, margin: 0.5 }}
+          />
+        </Link>
+
+        <Link to="/movies/favorites" style={{ textDecoration: "none" }}>
+        <Chip
+          label="Favorites"
+          color="primary"
+          clickable
+          sx={{ ...{ color: "#fff" }, margin: 0.5 }}
+          />
+        </Link>
+
+        <Link to="/movies/mustWatch" style={{ textDecoration: "none" }}>
+        <Chip
+          label="Watchlist"
+          color="primary"
+          clickable
+          sx={{ ...{ color: "#fff" }, margin: 0.5 }}
+          />
+        </Link>
+      </Paper>
+      </Paper>
+
+      <Fab
         color="secondary"
         variant="extended"
         onClick={() =>setDrawerOpen(true)}

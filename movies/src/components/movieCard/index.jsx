@@ -46,6 +46,7 @@ export default function MovieCard({ movie, action }) {
   };
 
   return (
+    <Link to={`/movies/${movie.id}`} style={{ textDecoration: "none" }}>
     <Card>
       <CardHeader
         avatar={
@@ -114,5 +115,6 @@ export default function MovieCard({ movie, action }) {
           </Link>
       </CardActions> }
     </Card>
+    </Link>
   );
 }

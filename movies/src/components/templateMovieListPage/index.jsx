@@ -6,6 +6,8 @@ import MovieFilters from "../movieFilters";
 import Fab from '@mui/material/Fab';
 import FilterListIcon from '@mui/icons-material/FilterList';
 import Tooltip from '@mui/material/Tooltip';
+import Pagination from '@mui/material/Pagination';
+import Stack from '@mui/material/Stack';
 
 function MovieListPageTemplate({ movies, title, action, infoDescription }) {
   const [nameFilter, setNameFilter] = useState("");
@@ -17,10 +19,10 @@ function MovieListPageTemplate({ movies, title, action, infoDescription }) {
   const [sortAscending, setSortAscending] = useState(false);
   const [sortDescending, setSortDescending] = useState(false);
 
-  
   const genreId = Number(genreFilter);
+  const [page, setPage] = useState(1);
 
-   const handleChange = (type, value) => {
+  const handleChange = (type, value) => {
     if (type === "name") setNameFilter(value);
     else if (type === "genre")setGenreFilter(value);
     else if (type === "year") setYearFilter(value);
@@ -33,7 +35,7 @@ function MovieListPageTemplate({ movies, title, action, infoDescription }) {
   setSortDescending(false);
 };
 
-const handleSortDescending = () => {
+  const handleSortDescending = () => {
   setSortDescending(prev => !prev); 
   setSortAscending(false); 
 }
@@ -74,7 +76,17 @@ else if (sortDescending) {
   displayedMovies.sort((a, b) => b.title.localeCompare(a.title));
 }
 
+const moviesPerPage = 16;
+  const lastMovieShown = page * moviesPerPage;
+  const firstMovieShown = lastMovieShown - moviesPerPage;
+  const numberOfMoviesShown = displayedMovies.slice(firstMovieShown, lastMovieShown);
+
+ const handlePageChange = (event, value) => {
+    setPage(value);
+  };
+
   return (
+    <>
     <Grid container>
       
       <Grid size={12}>
@@ -107,9 +119,22 @@ else if (sortDescending) {
     </Tooltip>
 
       <Grid container sx={{flex: "1 1 500px"}}>
-      <MovieList action={action} movies={displayedMovies}></MovieList>
+      <MovieList action={action} movies={numberOfMoviesShown}></MovieList>
       </Grid>
     </Grid>
+    <Stack spacing={2} sx={{ width: '100%', alignItems: 'center', mt: 2 }}>
+    <Pagination
+    count={Math.ceil(displayedMovies.length / moviesPerPage)} showFirstButton showLastButton //whole number   
+    page={page}     
+    onChange={handlePageChange}    
+    color="primary"
+    sx={{
+      '& .MuiPaginationItem-root': { color: '#ffffff'},
+      '& .Mui-selected': { backgroundColor: '#e50914', color: '#fff'},
+    }}
+    />
+   </Stack>
+    </>
   );
 }
 export default MovieListPageTemplate;

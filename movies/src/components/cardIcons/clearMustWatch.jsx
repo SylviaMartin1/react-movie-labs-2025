@@ -27,6 +27,8 @@ const ClearMustWatchFab = ({ movie }) => {
     setOpenSnackbar(true);
   };
 
+  const hasMustWatch = context.mustWatch.length > 0;
+
   const handleCloseSnackbar = (event, reason) => {
     if (reason === 'clickaway') {
       return;
@@ -52,12 +54,16 @@ const ClearMustWatchFab = ({ movie }) => {
         <DialogTitle>Clear Watchlist</DialogTitle>
         <DialogContent>
           <Typography variant="body1" sx={{ mt: 1 }}>
-            Are you sure you want to clear your watchlist?
+            {hasMustWatch
+              ? "Are you sure you want to clear your watchlist?"
+              : "Nothing to clear."}
           </Typography>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleCloseDialog}>Cancel</Button>
+          {hasMustWatch && (
           <Button onClick={handleClearWatchlist} color="error">Yes</Button>
+          )}
         </DialogActions>
       </Dialog>
 

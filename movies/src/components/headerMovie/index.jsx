@@ -35,8 +35,6 @@ const MovieHeader = (props) => {
         </a>
         </Tooltip>
 
-
-
       <Typography variant="h4" component="h3"  sx={{ color: '#ffffff', fontWeight:"bold", fontFamily:"Poppins" }}>
         {movie.title}
         <br />

@@ -8,8 +8,6 @@ import MenuIcon from "@mui/icons-material/Menu";
 import HomeIcon from '@mui/icons-material/Home';
 import MovieIcon from '@mui/icons-material/Movie';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import WatchLaterIcon from '@mui/icons-material/WatchLater';
-import SearchIcon from '@mui/icons-material/Search';
 import WhatshotIcon from '@mui/icons-material/Whatshot';
 import MilitaryTechIcon from '@mui/icons-material/MilitaryTech';
 import TheatersIcon from '@mui/icons-material/Theaters';
@@ -20,7 +18,7 @@ import { styled } from '@mui/material/styles';
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Tooltip from '@mui/material/Tooltip';
-import TheaterComedyIcon from '@mui/icons-material/TheaterComedy';
+import PlaylistPlayIcon from '@mui/icons-material/PlaylistPlay';
 
 const Offset = styled('div')(({ theme }) => theme.mixins.toolbar);
 
@@ -40,8 +38,7 @@ const SiteHeader = () => {
     { label: <TheatersIcon />, path: "/movies/nowPlayingInTheatres", title: "In Theatres" }, //In Theatre Movies page
     { label: <MovieIcon />, path: "/movies/upcoming", title: "Upcoming Movies" }, //Upcoming Movies page
     { label: <FavoriteIcon />, path: "/movies/favorites", title: "Favourites" }, //Favourite page
-    { label: <WatchLaterIcon />, path: "/movies/mustWatch", title: "Watch Later" }, //Watchlist page
-    { label: <TheaterComedyIcon />, path: "/movies/actors", title: "Actors" }, //Search page
+    { label: <PlaylistPlayIcon />, path: "/movies/mustWatch", title: "Watchlist" }, //Watchlist page
   ];
 
   const handleMenuSelect = (pageURL) => {

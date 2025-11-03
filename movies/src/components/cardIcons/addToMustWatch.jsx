@@ -5,6 +5,7 @@ import PlaylistAddIcon from "@mui/icons-material/PlaylistAdd";
 import Tooltip from '@mui/material/Tooltip';
 import CloseIcon from '@mui/icons-material/Close';
 import Snackbar from '@mui/material/Snackbar';
+import { Link } from "react-router";
 
 const AddToMustWatchIcon = ({ movie }) => {
   const context = useContext(MoviesContext);
@@ -48,7 +49,14 @@ const AddToMustWatchIcon = ({ movie }) => {
         open={open}
         autoHideDuration={6000}
         onClose={handleClose}
-        message="Added to watchlist"
+         message= {
+        <span>
+        Added to watchlist!{" "}
+        <Link to="/movies/mustWatch" style={{ color: "primary", textDecoration: "underline" }}>
+        View Watchlist
+        </Link>
+        </span>
+        }
         action={action}
       />
     </>
